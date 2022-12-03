@@ -5,8 +5,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
-import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.commands.ExampleCommand;
+
 import frc.util.SuperSystem;
 import frc.robot.Constants;
 
@@ -17,7 +16,7 @@ public class collectSubsystem extends SuperSystem {
   
 
 
-  public collectSubsystem(collectSubsystem colectSubsystem) {
+  public collectSubsystem() {
     super("colectSubsystem");
   }
 

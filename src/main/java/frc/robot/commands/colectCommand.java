@@ -5,7 +5,6 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.collectSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -13,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class colectCommand extends CommandBase {
     collectSubsystem collectSystem;
     double output; 
-    public void SetOutputCommand(collectSubsystem collectSystem, double output) {
+    public colectCommand(collectSubsystem collectSystem, double output) {
       // Use addRequirements() here to declare subsystem dependencies.    
       addRequirements(collectSystem);    
       this.collectSystem = collectSystem;    
@@ -30,18 +29,20 @@ public class colectCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
+    collectSystem.setOutput(output);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    collectSystem.setOutput(0);
+  }
 
   // Returns true when the command should end.
   @Override
